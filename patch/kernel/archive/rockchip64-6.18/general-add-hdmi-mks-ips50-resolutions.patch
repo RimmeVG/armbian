@@ -36,36 +36,6 @@ index 111111111111..222222222222 100644
  
  	if (vic >= 1 && vic < 1 + ARRAY_SIZE(edid_cea_modes_1))
  		return &edid_cea_modes_1[vic - 1];
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index 111111111111..222222222222 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -295,6 +295,1 @@ static const struct pre_pll_config pre_pll_cfg_table[] = {
- 	{ 33750000,  33750000,  1,   45, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-diff --git a/drivers/video/hdmi.c b/drivers/video/hdmi.c
-index 111111111111..222222222222 100644
---- a/drivers/video/hdmi.c
-+++ b/drivers/video/hdmi.c
-@@ -1087,6 +1087,8 @@ hdmi_picture_aspect_get_name(enum hdmi_picture_aspect picture_aspect)
- 		return "64:27";
- 	case HDMI_PICTURE_ASPECT_256_135:
- 		return "256:135";
-+	case HDMI_PICTURE_ASPECT_5_3:
-+		return "5:3";
- 	case HDMI_PICTURE_ASPECT_RESERVED:
- 		return "Reserved";
- 	}
-diff --git a/include/linux/hdmi.h b/include/linux/hdmi.h
-index 111111111111..222222222222 100644
---- a/include/linux/hdmi.h
-+++ b/include/linux/hdmi.h
-@@ -108,6 +108,7 @@ enum hdmi_picture_aspect {
- 	HDMI_PICTURE_ASPECT_16_9,
- 	HDMI_PICTURE_ASPECT_64_27,
- 	HDMI_PICTURE_ASPECT_256_135,
-+	HDMI_PICTURE_ASPECT_5_3,
- 	HDMI_PICTURE_ASPECT_RESERVED,
- };
- 
+
 -- 
 Armbian
