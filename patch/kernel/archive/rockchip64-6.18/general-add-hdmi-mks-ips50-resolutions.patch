@@ -30,15 +30,15 @@ index 111111111111..222222222222 100644
 +		   DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC),
 +	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },
 +	/* 222 - 800x480@60Hz 5:3, BTT HDMI5 */
-+	{ DRM_MODE("800x480", DRM_MODE_TYPE_DRIVER, 25200, 640, 656,
-+		   752, 800, 0, 480, 490, 492, 525, 0,
++	{ DRM_MODE("800x480", DRM_MODE_TYPE_DRIVER, 33750, 800, 816,
++		   928, 1088, 0, 480, 486, 494, 517, 0,
 +		   DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC),
 +	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },
-+	/* 223 - 800x480@60Hz 5:3, BTT HDMI5 */
-+	{ DRM_MODE("800x480", DRM_MODE_TYPE_DRIVER, 25175, 800, 816,
-+		   848, 800, 0, 480, 490, 492, 525, 0,
++	/* 223 - 848x480@60Hz 5:3, BTT HDMI5 */
++	{ DRM_MODE("848x480", DRM_MODE_TYPE_DRIVER, 33750, 848, 864,
++		   976, 1088, 0, 480, 486, 494, 517, 0,
 +		   DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC),
-+	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },	  
++	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },
  };
  
  /*
@@ -55,10 +55,8 @@ diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchi
 index 111111111111..222222222222 100644
 --- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
 +++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -295,6 +295,9 @@ static const struct pre_pll_config pre_pll_cfg_table[] = {
+@@ -295,6 +295,7 @@ static const struct pre_pll_config pre_pll_cfg_table[] = {
  	{ 25175000,  31468750,  1,   41, 0, 3, 3,  1, 3, 3,  4, 0, 0xf5554f},
-+	{ 25175000,  25175000,  1,   42, 0, 3, 3,  1, 2, 3,  4, 0,      0x0}, // BTT HDMI5
-+   	{ 25200000,  25200000,  1,   42, 0, 3, 3,  1, 2, 3,  4, 0,      0x0}, // BTT HDMI5
  	{ 27000000,  27000000,  1,   36, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
  	{ 27000000,  33750000,  1,   45, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
 +	{ 30240000,  30240000,  5,  504, 3, 2, 2, 20, 4, 2,  2, 0,      0x0}, // Non standard screens like MKS IPS50
@@ -92,4 +90,3 @@ index 111111111111..222222222222 100644
  
 -- 
 Armbian
-
