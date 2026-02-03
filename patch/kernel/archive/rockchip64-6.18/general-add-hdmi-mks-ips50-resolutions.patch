@@ -29,6 +29,11 @@ index 111111111111..222222222222 100644
 +		   950, 960, 0, 480, 510, 513, 525, 0,
 +		   DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC),
 +	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },
+        /* 222 - 800x480@60Hz 5:3, MKS IPS50 */
+	{ DRM_MODE("800x480", DRM_MODE_TYPE_DRIVER, 30240, 800, 850,
+		   950, 960, 0, 480, 510, 513, 525, 0,
+		   DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC),
+	  .picture_aspect_ratio = HDMI_PICTURE_ASPECT_5_3, },
  };
  
  /*
@@ -37,7 +42,7 @@ index 111111111111..222222222222 100644
  {
  	BUILD_BUG_ON(1 + ARRAY_SIZE(edid_cea_modes_1) - 1 != 127);
 -	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 219);
-+	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 221);
+	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 222);
  
  	if (vic >= 1 && vic < 1 + ARRAY_SIZE(edid_cea_modes_1))
  		return &edid_cea_modes_1[vic - 1];
