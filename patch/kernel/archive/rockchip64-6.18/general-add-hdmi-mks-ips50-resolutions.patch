@@ -47,7 +47,7 @@ index 111111111111..222222222222 100644
  {
  	BUILD_BUG_ON(1 + ARRAY_SIZE(edid_cea_modes_1) - 1 != 127);
 -	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 219);
-	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 223);
++	BUILD_BUG_ON(193 + ARRAY_SIZE(edid_cea_modes_193) - 1 != 223);
  
  	if (vic >= 1 && vic < 1 + ARRAY_SIZE(edid_cea_modes_1))
  		return &edid_cea_modes_1[vic - 1];
